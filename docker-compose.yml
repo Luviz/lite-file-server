@@ -3,9 +3,16 @@ services:
     build: 
       context: api
       dockerfile: Dockerfile.dev
-    
-    ports:
-      - 3000:3000
     volumes:
       - ./api/src:/app/src
       - ./api/store:/app/store
+  
+  swa:
+    build:
+      context: swa
+    ports:
+      - 8080:8080
+    volumes:
+      - ./swa/src:/swa/src
+      - ./swa/public:/swa/public
+  

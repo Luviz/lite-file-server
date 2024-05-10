@@ -5,6 +5,7 @@ import './app.css'
 
 export function App() {
   const [count, setCount] = useState(0)
+  fetch("/api/files").then((r) => console.log("ffff", r))
 
   return (
     <>
@@ -26,7 +27,7 @@ export function App() {
         </p>
       </div>
       <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
+        Click on the Vite and Preact logos to learn more!!
       </p>
     </>
   )
