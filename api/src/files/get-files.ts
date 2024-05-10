@@ -9,5 +9,17 @@ fileRouter.get("/files", (_, res) => {
 })
 
 fileRouter.get("/file/:id", (req, res) => {
-  res.send(fileService.get(req.params.id));
+  try {
+    res.send(fileService.get(req.params.id));
+  } catch (e) {
+    res.status(404).send(`File ${req.params.id} dose not exist`)
+  }
+})
+
+fileRouter.get("/file/:id/download", (req, res) => {
+  try {
+    res.download(fileService.download(req.params.id));
+  } catch (e) {
+    res.status(404).send(`File ${req.params.id} dose not exist`)
+  }
 })
