@@ -1,0 +1,11 @@
+.file-card {
+  background-color: var(--bg-color);
+  padding: 0.5rem;
+  cursor: pointer;
+  filter: brightness(80%);
+  color: var(--fg-color);
+}
+
+.file-card:hover {
+  filter: brightness(150%);
+}
