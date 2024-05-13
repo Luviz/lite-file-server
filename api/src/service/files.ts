@@ -24,7 +24,4 @@ export const fileService = {
     testFile(path);
     return path;
   },
-  upload: (file: any) => {
-    throw Error("Not implemented");
-  },
 };

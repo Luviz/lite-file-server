@@ -10,11 +10,19 @@ export function App() {
     fetch("/api/files")
       .then((r) => r.json())
       .then((f) => (files.value = f));
-  },[]);
+  }, []);
 
   return (
     <>
       <h1>Lite file server</h1>
+      <form
+        action="/api/file/upload"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input type="file" name="file" id="file-loc" />
+        <input type="submit" value="Submit" />
+      </form>
       <div className="list-container">
         {files.value.map((f) => (
           <FileCard name={f} />
